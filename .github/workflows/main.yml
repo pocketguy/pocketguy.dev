@@ -24,6 +24,5 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@2.0.3
       env:
-        BASE_BRANCH: master
         BRANCH: gh-pages
         FOLDER: dist
