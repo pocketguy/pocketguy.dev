@@ -23,3 +23,5 @@ jobs:
       run: npm run generate
     - name: GitHub Pages Deploy
       uses: maxheld83/ghpages@v0.2.1
+      env:
+        BUILD_DIR: dist/
