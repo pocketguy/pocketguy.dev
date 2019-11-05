@@ -21,8 +21,9 @@ jobs:
       run: npm run lint
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@2.0.3
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v2.5.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: dist
-        BUILD_SCRIPT: npm run generate
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./public
