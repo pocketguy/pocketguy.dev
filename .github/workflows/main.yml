@@ -11,19 +11,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout
+    - name: Checkout current branch
       uses: actions/checkout@v1
-    - name: setup-node
+    - name: Setup node.js
       uses: actions/setup-node@v1
-    - name: install dependencies
+    - name: Install dependencies
       run: npm install
-    - name: lint project
+    - name: Lint project
       run: npm run lint
-    - name: generate pages
-      run: npm run generate
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@2.0.3
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
         FOLDER: dist
+        BUILD_SCRIPT: npm run generate
