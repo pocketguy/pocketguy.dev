@@ -38,7 +38,21 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/pwa'],
+  modules: [
+    '@nuxtjs/pwa',
+    ['@nuxtjs/google-tag-manager', { id: 'GTM-P78R8DT' }],
+    [
+      '@nuxtjs/yandex-metrika',
+      {
+        id: '56104291',
+        webvisor: true
+        // clickmap:true,
+        // useCDN:false,
+        // trackLinks:true,
+        // accurateTrackBounce:true,
+      }
+    ]
+  ],
   /*
    ** Build configuration
    */
