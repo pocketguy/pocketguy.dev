@@ -52,13 +52,15 @@ export default {
         // accurateTrackBounce:true,
       }
     ],
-    'nuxt-webfontloader'
+    'nuxt-webfontloader',
+    '@nuxtjs/sitemap'
   ],
   webfontloader: {
     google: {
       families: ['Anonymous+Pro:400,700&display=swap&subset=cyrillic']
     }
   },
+  sitemap: {},
   /*
    ** Build configuration
    */
