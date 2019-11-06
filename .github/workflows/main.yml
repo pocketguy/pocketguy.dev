@@ -1,6 +1,9 @@
-name: CI
+name: Deploy to GitHub Pages
 
-on: [push]
+on:
+  push:
+    branches:
+    - master
 
 jobs:
   deploy:
@@ -13,7 +16,7 @@ jobs:
     - name: Setup node.js
       uses: actions/setup-node@v1
     - name: Install dependencies
-      run: npm install
+      run: npm ci
     - name: Lint project
       run: npm run lint
     - name: Generate pages
@@ -24,3 +27,4 @@ jobs:
         PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: ./dist
+ 
