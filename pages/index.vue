@@ -5,15 +5,35 @@
   </div>
 </template>
 
-<style lang="stylus" scoped>
-.container-fluid-screen
-  width 100%
-  height 100vh
-  display flex
-  flex-direction column
-  align-items center
-  justify-content center
+<script>
+export default {
+  head() {
+    return {
+      title: 'pocketguy.dev',
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'pocketguy.dev developer blog'
+        }
+      ]
+    }
+  }
+}
+</script>
 
-  img
-    max-width 100%
+<style lang="stylus" scoped>
+.container-fluid-screen {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-width: 100%;
+  }
+}
 </style>

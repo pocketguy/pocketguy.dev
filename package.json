@@ -1,7 +1,7 @@
 {
   "name": "pocketguy",
   "version": "1.0.0",
-  "description": "pocketguy.dev website",
+  "description": "pocketguy.dev developer blog",
   "author": "pocketguy <pocketguy@protonmail.com> (https://pocketguy.dev)",
   "private": true,
   "scripts": {
