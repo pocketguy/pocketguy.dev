@@ -1,0 +1,115 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@require 'vars.styl';
+
+typo = {
+    h1: {
+        mult: 8,
+        mb: 4
+    },
+    h2: {
+        mult: 6,
+        mb: 3
+    },
+    h3: {
+        mult: 4,
+        mb: 2
+    },
+    p: {
+        mult: 4,
+        mb: 2
+    },
+    blockquote: {
+        mult: 4,
+        mb: 2
+    }
+};
+
+body {
+    font-family: 'Anonymous Pro';
+    font-size: rythm(4);
+    color: colors.text;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: rythm(8);
+}
+
+h2 {
+    font-size: rythm(6);
+    margin-top: rythm(4);
+}
+
+h3 {
+    margin-top: rythm(4);
+}
+
+blockquote {
+    padding-left: rythm(2);
+    border-left: rythm(1) solid colors.main;
+    padding: rythm(4);
+}
+
+p, blockquote, pre, ol, ul, li {
+    &:not(:first-child) {
+        margin-top: rythm(4);
+    }
+
+    & + h2, & + h3 {
+        margin-top: rythm(8);
+    }
+}
+
+a {
+    color: colors.text;
+    text-decoration: underline;
+    text-decoration-color: colors.main;
+    transition: color td;
+
+    &:visited {
+        color: initial;
+    }
+
+    &:hover {
+        color: colors.main;
+    }
+}
+
+pre {
+    overflow: auto;
+    background: colors.grey;
+    padding: rythm(4) - 1;
+    border: 1px solid colors.grey-dark;
+}
+
+ol {
+    counter-reset: item;
+
+    li:before {
+        display: inline;
+        content: counter(item) '. ';
+        counter-increment: item;
+        font-weight: bold;
+    }
+}
+
+ul {
+    li:before {
+        display: inline;
+        content: '• ';
+        color: colors.main;
+    }
+}
+
+strong {
+    font-weight: 700;
+}
