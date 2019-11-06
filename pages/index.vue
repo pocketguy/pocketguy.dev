@@ -1,6 +1,7 @@
 <template>
   <div class="container-fluid-screen">
     <img :src="$icon(512)" alt="pocketguy.dev" />
+    <h1>pocketguy.dev</h1>
   </div>
 </template>
 

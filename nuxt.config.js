@@ -23,7 +23,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/assets/css/reset.css', '@/assets/stylus/main.styl'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -51,8 +51,14 @@ export default {
         // trackLinks:true,
         // accurateTrackBounce:true,
       }
-    ]
+    ],
+    'nuxt-webfontloader'
   ],
+  webfontloader: {
+    google: {
+      families: ['Anonymous+Pro:400,700&display=swap&subset=cyrillic']
+    }
+  },
   /*
    ** Build configuration
    */
