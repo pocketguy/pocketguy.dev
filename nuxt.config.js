@@ -60,7 +60,9 @@ export default {
       families: ['Anonymous+Pro:400,700&display=swap&subset=cyrillic']
     }
   },
-  sitemap: {},
+  sitemap: {
+    hostname: 'https://pocketguy.dev'
+  },
   /*
    ** Build configuration
    */
