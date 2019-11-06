@@ -1,5 +1,8 @@
 # pocketguy.dev
 
+[![Actions Status](https://github.com/pocketguy/pocketguy.dev/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)](https://github.com/pocketguy/pocketguy.dev/actions?query=workflow%3A%22Deploy+to+GitHub+Pages%22)
+
+
 > pocketguy.dev website
 
 ## Build Setup
