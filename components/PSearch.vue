@@ -1,13 +1,21 @@
 <template>
-  <div class="search">
+  <div :class="{ search: true, active, val }">
     <input v-model="val" type="hidden" />
-    <div :class="labelClass">поиск</div>
+    <div class="label">поиск</div>
     <div
-      :class="inputClass"
+      ref="input"
+      class="input"
       contenteditable
       @input="val = $event.target.innerText"
       @focus="focus = true"
       @blur="focus = false"
+    ></div>
+    <div
+      class="cross"
+      @click="
+        val = ''
+        $refs.input.innerText = ''
+      "
     ></div>
     <div v-if="searchResults.length !== 0" class="search-results">
       <ul>
@@ -35,18 +43,6 @@ export default {
     },
     active() {
       return this.val || this.focus
-    },
-    labelClass() {
-      return {
-        label: true,
-        active: this.active
-      }
-    },
-    inputClass() {
-      return {
-        input: true,
-        active: this.active
-      }
     }
   }
 }
@@ -55,6 +51,8 @@ export default {
 .search {
   text-align: left;
   position: relative;
+  margin-left: auto;
+  width: 141px;
 }
 
 .label {
@@ -65,7 +63,7 @@ export default {
   color: colors.main;
   font-weight: 700;
 
-  &.active {
+  .active & {
     top: 0;
     font-size: rythm(3);
     color: colors.main-dark;
@@ -81,8 +79,40 @@ export default {
     outline: none;
   }
 
-  &.active {
+  .active & {
     border-color: colors.main-dark;
+  }
+}
+
+.val .cross {
+  cursor: pointer;
+  position: absolute;
+  right: rythm(2);
+  bottom: rythm(2);
+  display: inline-block;
+  width: rythm(4);
+  height: rythm(4);
+
+  &:before {
+    position: absolute;
+    display: block;
+    width: rythm(2);
+    height: rythm(2);
+    content: '';
+    border-left: 2px solid colors.main-dark;
+    border-top: 2px solid colors.main-dark;
+    transform: translateX(-1px) translateY(50%) rotate(135deg);
+  }
+
+  &:after {
+    position: absolute;
+    display: block;
+    width: rythm(2);
+    height: rythm(2);
+    content: '';
+    border-right: 2px solid colors.main-dark;
+    border-bottom: 2px solid colors.main-dark;
+    transform: translateX(100%) translateX(1px)  translateY(50%)  rotate(135deg);
   }
 }
 
@@ -91,7 +121,7 @@ export default {
   background: white;
   min-width: 400px;
   max-width: 100vw;
-  min-height 300px;
+  min-height: 300px;
   border: 2px solid colors.main-dark;
   background: white;
   padding: rythm(4);
