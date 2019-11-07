@@ -53,8 +53,12 @@ export default {
       }
     ],
     'nuxt-webfontloader',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/style-resources'
   ],
+  styleResources: {
+    stylus: ['@/assets/stylus/vars.styl']
+  },
   webfontloader: {
     google: {
       families: ['Anonymous+Pro:400,700&display=swap&subset=cyrillic']

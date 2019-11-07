@@ -7,47 +7,25 @@ html {
 
 @require 'vars.styl';
 
-typo = {
-    h1: {
-        mult: 8,
-        mb: 4
-    },
-    h2: {
-        mult: 6,
-        mb: 3
-    },
-    h3: {
-        mult: 4,
-        mb: 2
-    },
-    p: {
-        mult: 4,
-        mb: 2
-    },
-    blockquote: {
-        mult: 4,
-        mb: 2
-    }
-};
-
 body {
     font-family: 'Anonymous Pro';
     color: colors.text;
 }
 
-h1, h2, h3 {
+
+h1, .h1, h2, .h2, h3, .h3 {
     font-weight: 700;
 }
 
-h1 {
+h1, .h1 {
     font-size: rythm(8);
 }
 
-h2 {
+h2, .h2 {
     font-size: rythm(6);
 }
 
-h3 {
+h3, .h3 {
     font-size: rythm(5);
 }
 
@@ -64,7 +42,7 @@ p, blockquote, pre, ol, ul, li {
         margin-top: rythm(4);
     }
 
-    & + h2, & + h3 {
+    & + h1, & + .h1, & + h2, & + .h2, & + h3, & + .h3 {
         margin-top: rythm(8);
     }
 }
