@@ -1,8 +1,9 @@
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
+
 *, *:before, *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 @require 'vars.styl';
@@ -10,8 +11,8 @@ html {
 body {
     font-family: 'Anonymous Pro';
     color: colors.text;
+    letter-spacing: 1px;
 }
-
 
 h1, .h1, h2, .h2, h3, .h3 {
     font-weight: 700;
@@ -19,6 +20,7 @@ h1, .h1, h2, .h2, h3, .h3 {
 
 h1, .h1 {
     font-size: rythm(8);
+    margin-top: rythm(8);
 }
 
 h2, .h2 {
@@ -36,8 +38,9 @@ blockquote {
     padding: rythm(4);
 }
 
-p, blockquote, pre, ol, ul, li {
+p, blockquote, pre, ol, ul, li, .row {
     line-height: rythm(5);
+
     &:not(:first-child) {
         margin-top: rythm(4);
     }
@@ -90,4 +93,12 @@ ul {
 
 strong {
     font-weight: 700;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
 }
