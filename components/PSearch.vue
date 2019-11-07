@@ -135,13 +135,13 @@ export default {
     position: absolute;
     content: '';
     top: -1px;
-    right: rythm(4);
+    right: rythm(2) - 2px;
     width: rythm(4);
     height: rythm(4);
     border-left: 2px solid colors.main-dark;
     border-top: 2px solid colors.main-dark;
     background: white;
-    transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) translateY(-1px) rotate(45deg);
   }
 }
 </style>
