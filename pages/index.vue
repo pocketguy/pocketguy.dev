@@ -6,10 +6,14 @@
       <div class="col-1">
         <ul class="list-style-none">
           <li>
-            <h2><a href="#">проекты</a></h2>
+            <h2>
+              <a href="#">проекты</a>
+            </h2>
           </li>
           <li>
-            <h2><a href="#">блог</a></h2>
+            <h2>
+              <a href="#">блог</a>
+            </h2>
           </li>
         </ul>
       </div>
@@ -21,22 +25,22 @@
       <div class="col-1 text-right">
         <ul class="list-style-none">
           <li>
-            <h2><a href="#">github</a></h2>
+            <h2><a href="#">поиск</a></h2>
           </li>
           <li>
-            <h2><a href="#">контакты</a></h2>
+            <h2>
+              <a href="#">контакты</a>
+            </h2>
           </li>
         </ul>
       </div>
     </div>
-    <h2>
-      <nuxt-link :to="{ name: 'typo' }">типографика</nuxt-link>
-    </h2>
   </div>
 </template>
 
 <script>
 export default {
+  layout: 'clean',
   head() {
     return {
       title: 'pocketguy.dev',
@@ -66,6 +70,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: rythm(32);
 
   .row {
     display: flex;
