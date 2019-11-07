@@ -6,6 +6,7 @@
       ref="input"
       class="input"
       contenteditable
+      spellcheck="falseg"
       @input="val = $event.target.innerText"
       @focus="focus = true"
       @blur="focus = false"
@@ -112,7 +113,7 @@ export default {
     content: '';
     border-right: 2px solid colors.main-dark;
     border-bottom: 2px solid colors.main-dark;
-    transform: translateX(100%) translateX(1px)  translateY(50%)  rotate(135deg);
+    transform: translateX(100%) translateX(1px) translateY(50%) rotate(135deg);
   }
 }
 
