@@ -63,8 +63,8 @@ export default {
   sitemap: {
     hostname: 'https://pocketguy.dev'
   },
-  generate: {
-    subFolders: false
+  router: {
+    trailingSlash: true
   },
   /*
    ** Build configuration

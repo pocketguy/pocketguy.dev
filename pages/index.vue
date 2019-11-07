@@ -1,7 +1,12 @@
 <template>
   <div class="container-fluid-screen">
     <h1>pocketguy.dev</h1>
-    <img src="/icon.png" alt="pocketguy.dev" />
+    <p>
+      <img src="/icon.png" alt="pocketguy.dev" />
+    </p>
+    <p>
+      <nuxt-link :to="{ name: 'typo' }">typography</nuxt-link>
+    </p>
   </div>
 </template>
 
