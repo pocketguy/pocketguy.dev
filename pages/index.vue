@@ -15,6 +15,16 @@
               <a href="#">блог</a>
             </h2>
           </li>
+          <li>
+            <h2>
+              <a href="#">обо мне</a>
+            </h2>
+          </li>
+          <li>
+            <h2>
+              <a href="#">контакты</a>
+            </h2>
+          </li>
         </ul>
       </div>
       <div class="col-2">
@@ -25,11 +35,11 @@
       <div class="col-1 text-right">
         <ul class="list-style-none">
           <li>
-            <h2><a href="#">поиск</a></h2>
+            <PSearch />
           </li>
           <li>
             <h2>
-              <a href="#">контакты</a>
+              <a href="#">in english</a>
             </h2>
           </li>
         </ul>
@@ -39,8 +49,12 @@
 </template>
 
 <script>
+import PSearch from '@/components/PSearch.vue'
 export default {
   layout: 'clean',
+  components: {
+    PSearch
+  },
   head() {
     return {
       title: 'pocketguy.dev',

@@ -54,7 +54,7 @@ a {
     color: colors.text;
     text-decoration: underline;
     text-decoration-color: colors.main;
-    transition: color td;
+    transition: color td, text-decoration-color td;
 
     &:visited {
         color: initial;
@@ -62,6 +62,12 @@ a {
 
     &:hover {
         color: colors.main;
+    }
+
+    &:focus {
+        color: colors.main-dark;
+        text-decoration-color: colors.main-dark;
+        outline: none;
     }
 }
 
@@ -101,4 +107,8 @@ strong {
 
 .text-right {
     text-align: right;
+}
+
+::selection {
+    background-color: colors.main-light;
 }
