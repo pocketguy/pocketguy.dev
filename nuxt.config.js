@@ -57,7 +57,7 @@ export default {
     '@nuxtjs/style-resources'
   ],
   styleResources: {
-    stylus: ['@/assets/stylus/vars.styl']
+    stylus: ['@/assets/stylus/include.styl']
   },
   webfontloader: {
     google: {

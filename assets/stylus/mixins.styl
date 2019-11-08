@@ -1,0 +1,19 @@
+@require 'vars.styl';
+
+with-vp(name) {
+    vp = viewports[name];
+
+    @media (min-width: vp.break-width) {
+        {block};
+    }
+}
+
+directions = {
+    t: 'top',
+    b: 'bottom',
+    l: 'left',
+    r: 'right',
+    x: 'left' 'right',
+    y: 'top' 'bottom',
+    a: left right top bottom
+};

@@ -53,7 +53,6 @@ export default {
   text-align: left;
   position: relative;
   margin-left: auto;
-  width: 141px;
 }
 
 .label {

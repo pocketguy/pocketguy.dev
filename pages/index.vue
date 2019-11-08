@@ -1,9 +1,10 @@
 <template>
-  <div class="container-fluid-screen">
-    <h1>pocketguy.dev</h1>
-    <p>сайт веб-разработчика</p>
+  <div class="container main justify-center">
+    <h1 class="text-center mt-0">pocketguy.dev</h1>
+    <p class="text-center">сайт веб-разработчика</p>
     <div class="row">
-      <div class="col-1">
+      <div class="col"></div>
+      <div class="col-2 align-center">
         <ul class="list-style-none">
           <li>
             <h2>
@@ -27,12 +28,10 @@
           </li>
         </ul>
       </div>
-      <div class="col-2">
-        <p>
-          <img src="/icon.png" alt="pocketguy.dev icon" />
-        </p>
+      <div class="col-3">
+        <img class="pocketguy-img" src="/icon.png" alt="pocketguy.dev icon" />
       </div>
-      <div class="col-1 text-right">
+      <div class="col-2 align-center justify-end">
         <ul class="list-style-none">
           <li>
             <PSearch />
@@ -44,6 +43,7 @@
           </li>
         </ul>
       </div>
+      <div class="col"></div>
     </div>
   </div>
 </template>
@@ -78,6 +78,10 @@ export default {
   }
 }
 
+.main {
+  min-height: 100vh;
+}
+
 .container-fluid-screen {
   margin: auto;
   display: flex;
@@ -100,10 +104,10 @@ export default {
       }
     }
   }
+}
 
-  img {
-    max-width: 100%;
-    max-height: 400px;
-  }
+.pocketguy-img {
+  display: block;
+  width: 100%;
 }
 </style>
