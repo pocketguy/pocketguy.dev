@@ -72,7 +72,7 @@ export default {
 
 .input {
   border-bottom: 2px solid colors.main;
-  padding-bottom: rythm(1);
+  padding-bottom: rythm(.5);
   transition: border-color td;
 
   &:focus {

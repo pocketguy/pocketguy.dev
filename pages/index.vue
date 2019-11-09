@@ -1,10 +1,9 @@
 <template>
-  <div class="container main justify-center">
+  <div class="container main justify-center py-2">
     <h1 class="text-center mt-0">pocketguy.dev</h1>
     <p class="text-center">сайт веб-разработчика</p>
     <div class="row">
-      <div class="col"></div>
-      <div class="col-2 align-center">
+      <div class="col-md-2 align-center ml-auto">
         <ul class="list-style-none">
           <li>
             <h2>
@@ -28,10 +27,10 @@
           </li>
         </ul>
       </div>
-      <div class="col-3">
+      <div class="col-md-3">
         <img class="pocketguy-img" src="/icon.png" alt="pocketguy.dev icon" />
       </div>
-      <div class="col-2 align-center justify-end">
+      <div class="col-md-2 align-center justify-end">
         <ul class="list-style-none">
           <li>
             <PSearch />
@@ -43,7 +42,6 @@
           </li>
         </ul>
       </div>
-      <div class="col"></div>
     </div>
   </div>
 </template>

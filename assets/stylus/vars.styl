@@ -1,9 +1,4 @@
 vr = 4px;
-
-rythm(mult) {
-    vr * mult;
-}
-
 colors = {
     text: black,
     grey: #eaeaeb,
@@ -13,22 +8,9 @@ colors = {
     main-light: #ec9817
 };
 td = 0.15s;
-
-viewports = {
-    sm: {
-        break-width: rythm(144), // 576
-        container-width: rythm(135), // 540
-    },
-    md: {
-        break-width: rythm(192), // 768
-        container-width: rythm(180) // 720
-    }
-    lg: {
-        break-width: rythm(248), // 992
-        container-width: rythm(240), // 960
-    }
-    xl: {
-        break-width: rythm(300), // 1200
-        container-width: rythm(285) // 1140
-    }
-}
+breakpoints = {
+    sm: 600px,
+    md: 800px,
+    lg: 1000px,
+    xl: 1200px
+};

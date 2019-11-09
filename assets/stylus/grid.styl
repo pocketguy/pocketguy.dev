@@ -1,3 +1,4 @@
+@require 'computed.styl';
 @require 'mixins.styl';
 @require 'vars.styl';
 
@@ -5,77 +6,94 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-
-    for k, v in viewports {
-        +with-vp(k) {
-            width: v.container-width;
-        }
-    }
+    padding-left: rythm(4);
+    padding-right: rythm(4);
 }
 
 .row {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.col {
-    flex: 1;
+shortcuts = {
+    a: left right top bottom,
+    auto: auto,
+    ac: align-content,
+    ai: align-items,
+    as: align-self,
+    bl: baseline,
+    b: bottom,
+    c: center,
+    fe: flex-end,
+    fs: flex-start,
+    inh: inherit
+    ini: initial,
+    jc: justify-content,
+    l: left,
+    m: margin,
+    o: order,
+    p: padding,
+    r: right,
+    s: stretch,
+    sa: space-around,
+    sb: space-between,
+    t: top,
+    x: left right,
+    y: top bottom
 }
 
-for i in (1 .. 12) {
-    .col-{i} {
-        display: flex;
-        width: (i * 100 / 12) %;
-    }
+subshortcuts = {
+    ac: s c fs fe sb sa ini inh,
+    ai: s c fs fe bl ini inh,
+    as: auto s c fs fe bl ini inh,
+    jc: fs fe c sb sa ini inh
 }
 
-for k, v in viewport {
-    for i in (1 .. 12) {
-        .col-{k}-{i} {
-            +width-vp(k) {
-                display: flex;
-                width: (i * 100 / 12) %;
+
+for vpk, vpv in viewports {
+
+    // xs-* sm-* ...
+    +with-vp(vpk) {
+
+        .container {
+            width: vpv.container-width;
+        }
+
+        for i in (1 .. 12) {
+            .col-{vpk}-{i} {
+                +width-vp(vpk) {
+                    display: flex;
+                    width: (i * 100 / 12) %;
+                }
             }
         }
-    }
-}
 
-.justify-center {
-    justify-content: center;
-}
+        // *-p-*, *-m-*, ...
+        for k1 in p m {
+            v1 = shortcuts[k1]
 
-.justify-end {
-    justify-content: flex-end;
-}
+            // *-l-*, *-a-*, ...
+            for k2 in l r t b x y {
+                v2 = shortcuts[k2]
 
-.align-center {
-    align-items: center;
-}
+                    // *-0*, *-3-*, ...
+                    for i in (0..4) {
+                        .{sk_vp}-{k1}-{k2}-{i} {
+                            for subdirection in direction {
+                                {v1}-{v2}: rythm(i * 2)
+                            }
+                        }
 
-for i in (0 .. 4) {
-    for k, v in directions {
-        for vv in v {
-            .m{k}-{i} {
-                margin-{vv}: rythm(i * 2);
-            }
-
-            .p{k}-{i} {
-                padding-{vv}: rythm(i * 2);
-            }
-
-            for vpk, vpv in viewports {
-                .m{k}-{vpk}-{i} {
-                    +with-vp(vpk) {
-                        margin-{v}: rythm(i * 2);
                     }
-                }
-
-                .p{k}-{vpk}-{i} {
-                    +with-vp(vpk) {
-                        padding-{v}: rythm(i * 2);
-                    }
+                    
                 }
             }
+        }
+
+        // *-m-*-auto
+        .{sk_vp}-m-{direction_key}-auto {
+            margin-{direction}: auto
         }
     }
 }
