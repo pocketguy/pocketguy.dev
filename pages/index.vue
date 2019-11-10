@@ -7,22 +7,22 @@
         <ul class="list-style-none">
           <li>
             <h2>
-              <a href="#">проекты</a>
+              <nuxt-link :to="{ name: 'projects' }">проекты</nuxt-link>
             </h2>
           </li>
           <li>
             <h2>
-              <a href="#">блог</a>
+              <nuxt-link :to="{ name: 'blog' }">блог</nuxt-link>
             </h2>
           </li>
           <li>
             <h2>
-              <a href="#">обо мне</a>
+              <nuxt-link :to="{ name: 'about' }">обо мне</nuxt-link>
             </h2>
           </li>
           <li>
             <h2>
-              <a href="#">контакты</a>
+              <nuxt-link :to="{ name: 'contacts' }">контакты</nuxt-link>
             </h2>
           </li>
         </ul>
@@ -31,7 +31,7 @@
         <img class="pocketguy-img" src="/icon.png" alt="pocketguy.dev icon" />
       </div>
       <div class="md-w-2 md-mr-auto xs-mt-4 xs-d-f md-jc-fe">
-        <ul class="list-style-none">
+        <ul class="list-style-none xs-d-none">
           <li>
             <PSearch />
           </li>

@@ -12,6 +12,8 @@ shortcuts = {
     b: block,
     bl: baseline,
     c: center,
+    col-r: column-reverse,
+    col: column,
     f: flex,
     fe: flex-end,
     fs: flex-start,
@@ -20,14 +22,16 @@ shortcuts = {
     j: justify,
     jc: justify-content,
     l: left,
+    none: none,
+    nowrap: nowrap,
     r: right,
+    row-r: row-reverse,
+    row: row,
     s: stretch,
     sa: space-around,
     sb: space-between,
-    row: row,
-    row-r: row-reverse,
-    col: column,
-    col-r: column-reverse
+    wrap-r: wrap-reverse,
+    wrap: wrap
 };
 
 build_helpers(prefix) {
@@ -133,7 +137,7 @@ build_helpers(prefix) {
         }
     }
 
-    for i in b f {
+    for i in b f none {
         .{prefix}d-{i} {
             d(shortcuts[i]);
         }
@@ -142,6 +146,12 @@ build_helpers(prefix) {
     for i in row row-r col col-r {
         .{prefix}fd-{i} {
             fd(shortcuts[i]);
+        }
+    }
+
+    for i in nowrap wrap wrap-r {
+        .{prefix}fw-{i} {
+            fw(shortcuts[i]);
         }
     }
 }
