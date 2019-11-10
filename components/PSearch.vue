@@ -6,7 +6,7 @@
       ref="input"
       class="input"
       contenteditable
-      spellcheck="falseg"
+      spellcheck="false"
       @input="val = $event.target.innerText"
       @focus="focus = true"
       @blur="focus = false"
@@ -57,14 +57,14 @@ export default {
 
 .label {
   position: relative;
-  top: 1em;
+  transform: translateY(100%);
   pointer-events: none;
-  transition: top td, font-size td, color td;
+  transition: transform td, font-size td, color td;
   color: colors.main;
   font-weight: 700;
 
   .active & {
-    top: 0;
+    transform: translateY(0);
     font-size: rythm(3);
     color: colors.main-dark;
   }
@@ -72,8 +72,9 @@ export default {
 
 .input {
   border-bottom: 2px solid colors.main;
-  padding-bottom: rythm(1);
+  padding-bottom: rythm(.5);
   transition: border-color td;
+  min-height: rythm(6);
 
   &:focus {
     outline: none;

@@ -1,80 +1,158 @@
-@require 'mixins.styl';
-@require 'vars.styl';
+@require 'include.styl';
 
 .container {
     display: flex;
     flex-direction: column;
     margin: auto;
+    px(4);
+}
 
-    for k, v in viewports {
-        +with-vp(k) {
-            width: v.container-width;
+shortcuts = {
+    auto: auto,
+    b: block,
+    bl: baseline,
+    c: center,
+    f: flex,
+    fe: flex-end,
+    fs: flex-start,
+    inh: inherit,
+    ini: initial,
+    j: justify,
+    jc: justify-content,
+    l: left,
+    r: right,
+    s: stretch,
+    sa: space-around,
+    sb: space-between,
+    row: row,
+    row-r: row-reverse,
+    col: column,
+    col-r: column-reverse
+};
+
+build_helpers(prefix) {
+    for i in 0 1 2 3 4 {
+        .{prefix}pl-{i} {
+            pl(i);
+        }
+
+        .{prefix}pr-{i} {
+            pr(i);
+        }
+
+        .{prefix}pt-{i} {
+            pt(i);
+        }
+
+        .{prefix}pb-{i} {
+            pb(i);
+        }
+
+        .{prefix}px-{i} {
+            px(i);
+        }
+
+        .{prefix}py-{i} {
+            py(i);
+        }
+
+        .{prefix}pa-{i} {
+            pa(i);
         }
     }
-}
 
-.row {
-    display: flex;
-    flex-direction: row;
-}
+    for i in 0 1 2 3 4 auto {
+        .{prefix}ml-{i} {
+            ml(i);
+        }
 
-.col {
-    flex: 1;
-}
+        .{prefix}mr-{i} {
+            mr(i);
+        }
 
-for i in (1 .. 12) {
-    .col-{i} {
-        display: flex;
-        width: (i * 100 / 12) %;
+        .{prefix}mt-{i} {
+            mt(i);
+        }
+
+        .{prefix}mb-{i} {
+            mb(i);
+        }
+
+        .{prefix}mx-{i} {
+            mx(i);
+        }
+
+        .{prefix}my-{i} {
+            my(i);
+        }
+
+        .{prefix}ma-{i} {
+            ma(i);
+        }
     }
-}
 
-for k, v in viewport {
     for i in (1 .. 12) {
-        .col-{k}-{i} {
-            +width-vp(k) {
-                display: flex;
-                width: (i * 100 / 12) %;
-            }
+        .{prefix}w-{i} {
+            w(i);
+        }
+    }
+
+    for i in (-6 .. 6) {
+        .{prefix}o-{i} {
+            o(i);
+        }
+    }
+
+    for i in s c fs fe sb sa ini inh {
+        .{prefix}ac-{i} {
+            ac(shortcuts[i]);
+        }
+    }
+
+    for i in s c fs fe bl ini inh {
+        .{prefix}ai-{i} {
+            ai(shortcuts[i]);
+        }
+    }
+
+    for i in auto s c fs fe bl ini inh {
+        .{prefix}as-{i} {
+            as(shortcuts[i]);
+        }
+    }
+
+    for i in fs fe c sb sa ini inh {
+        .{prefix}jc-{i} {
+            jc(shortcuts[i]);
+        }
+    }
+
+    for i in l r c j ini inh {
+        .{prefix}ta-{i} {
+            ta(shortcuts[i]);
+        }
+    }
+
+    for i in b f {
+        .{prefix}d-{i} {
+            d(shortcuts[i]);
+        }
+    }
+
+    for i in row row-r col col-r {
+        .{prefix}fd-{i} {
+            fd(shortcuts[i]);
         }
     }
 }
 
-.justify-center {
-    justify-content: center;
-}
+for vpk, vpv in viewports {
+    +with-vp(vpk) {
+        build_helpers(vpk + '-');
 
-.justify-end {
-    justify-content: flex-end;
-}
-
-.align-center {
-    align-items: center;
-}
-
-for i in (0 .. 4) {
-    for k, v in directions {
-        for vv in v {
-            .m{k}-{i} {
-                margin-{vv}: rythm(i * 2);
-            }
-
-            .p{k}-{i} {
-                padding-{vv}: rythm(i * 2);
-            }
-
-            for vpk, vpv in viewports {
-                .m{k}-{vpk}-{i} {
-                    +with-vp(vpk) {
-                        margin-{v}: rythm(i * 2);
-                    }
-                }
-
-                .p{k}-{vpk}-{i} {
-                    +with-vp(vpk) {
-                        padding-{v}: rythm(i * 2);
-                    }
-                }
+        .container {
+            if (vpv != 0) {
+                max-width: vpv;
             }
         }
     }

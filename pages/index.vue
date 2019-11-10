@@ -1,10 +1,9 @@
 <template>
-  <div class="container main justify-center">
-    <h1 class="text-center mt-0">pocketguy.dev</h1>
-    <p class="text-center">сайт веб-разработчика</p>
-    <div class="row">
-      <div class="col"></div>
-      <div class="col-2 align-center">
+  <div class="container main md-jc-c xs-py-4">
+    <h1 class="xs-ta-c">pocketguy.dev</h1>
+    <p class="xs-ta-c">сайт веб-разработчика</p>
+    <div class="xs-d-f xs-fd-col md-fd-row md-ai-c">
+      <div class="md-w-2 md-ml-auto xs-mt-4">
         <ul class="list-style-none">
           <li>
             <h2>
@@ -28,10 +27,10 @@
           </li>
         </ul>
       </div>
-      <div class="col-3">
+      <div class="md-w-3 xs-mt-4 xs-o--1 md-o-0">
         <img class="pocketguy-img" src="/icon.png" alt="pocketguy.dev icon" />
       </div>
-      <div class="col-2 align-center justify-end">
+      <div class="md-w-2 md-mr-auto xs-mt-4 xs-d-f md-jc-fe">
         <ul class="list-style-none">
           <li>
             <PSearch />
@@ -43,7 +42,6 @@
           </li>
         </ul>
       </div>
-      <div class="col"></div>
     </div>
   </div>
 </template>
