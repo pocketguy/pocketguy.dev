@@ -31,7 +31,7 @@
         <img class="pocketguy-img" src="/icon.png" alt="pocketguy.dev icon" />
       </div>
       <div class="md-w-2 md-mr-auto xs-mt-4 xs-d-f md-jc-fe">
-        <ul class="list-style-none">
+        <ul class="list-style-none xs-d-none">
           <li>
             <PSearch />
           </li>

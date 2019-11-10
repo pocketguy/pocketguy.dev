@@ -7,25 +7,41 @@
         </nuxt-link>
       </p>
       <ul class="nav xs-d-f xs-fw-wrap">
-        <li class="nav-item xs-w-6 md-w-2 xs-px-2 xs-mt-0 md-ta-c md-ml-auto">
-          <a class="nav-link" href="#">проекты</a>
+        <li class="nav-item xs-w-6 md-w-2 xs-mt-0 md-ta-c md-ml-auto">
+          <nuxt-link class="nav-link" :to="{ name: 'projects' }">
+            проекты
+          </nuxt-link>
         </li>
-        <li class="nav-item xs-w-6 md-w-2 xs-px-2 xs-mt-0 xs-ta-r md-ta-c">
-          <a class="nav-link" href="#">блог</a>
+        <li class="nav-item xs-w-6 md-w-2 xs-mt-0 xs-ta-r md-ta-c">
+          <nuxt-link class="nav-link" :to="{ name: 'blog' }">блог</nuxt-link>
         </li>
-        <li class="nav-item xs-w-6 md-w-2 xs-px-2 xs-mt-2 md-mt-0 md-ta-c">
-          <a class="nav-link" href="#">github</a>
+        <li class="nav-item xs-w-6 md-w-2 xs-mt-2 md-mt-0 md-ta-c">
+          <nuxt-link class="nav-link" :to="{ name: 'about' }">
+            обо мне
+          </nuxt-link>
         </li>
         <li
-          class="nav-item xs-w-6 md-w-2 xs-px-2 xs-mt-2 md-mt-0 xs-ta-r md-ta-c md-mr-auto"
+          class="nav-item xs-w-6 md-w-2 xs-mt-2 md-mt-0 xs-ta-r md-ta-c md-mr-auto"
         >
-          <a class="nav-link" href="#">контакты</a>
+          <nuxt-link class="nav-link" :to="{ name: 'contacts' }">
+            контакты
+          </nuxt-link>
         </li>
       </ul>
     </nav>
     <nuxt class="xs-mt-4 xs-pt-4" />
-    <footer class="footer xs-pt-4 xs-mt-auto">
-      <p class="text-center">
+    <footer class="footer xs-pt-4 xs-mt-auto xs-ta-c">
+      <p>
+        <a
+          class="nav-link"
+          href="https://github.com/pocketguy"
+          rel="noopener noreferrer nofollow"
+          target="_blank"
+        >
+          github
+        </a>
+      </p>
+      <p>
         copyright © {{ new Date().getFullYear() }}
         <a href="mailto:pocketguy@protonmail.com">pocketguy@protonmail.com</a>
       </p>

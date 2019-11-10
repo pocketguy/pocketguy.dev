@@ -22,6 +22,7 @@ shortcuts = {
     j: justify,
     jc: justify-content,
     l: left,
+    none: none,
     nowrap: nowrap,
     r: right,
     row-r: row-reverse,
@@ -29,8 +30,8 @@ shortcuts = {
     s: stretch,
     sa: space-around,
     sb: space-between,
-    wrap: wrap,
-    wrap-r: wrap-reverse
+    wrap-r: wrap-reverse,
+    wrap: wrap
 };
 
 build_helpers(prefix) {
@@ -136,7 +137,7 @@ build_helpers(prefix) {
         }
     }
 
-    for i in b f {
+    for i in b f none {
         .{prefix}d-{i} {
             d(shortcuts[i]);
         }
