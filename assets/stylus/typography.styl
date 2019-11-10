@@ -9,6 +9,7 @@ html {
 }
 
 body {
+    line-height: rythm(5);
     font-family: 'Anonymous Pro';
     color: colors.text;
     letter-spacing: 1px;
@@ -20,15 +21,17 @@ h1, .h1, h2, .h2, h3, .h3 {
 
 h1, .h1 {
     font-size: rythm(8);
-    margin-top: rythm(8);
+    line-height: 1;
 }
 
 h2, .h2 {
     font-size: rythm(6);
+    line-height: 1;
 }
 
 h3, .h3 {
     font-size: rythm(5);
+    line-height: 1;
 }
 
 blockquote {
@@ -38,9 +41,7 @@ blockquote {
     padding: rythm(4);
 }
 
-p, blockquote, pre, ol, ul, li, .row {
-    line-height: rythm(5);
-
+p, blockquote, pre, ol, ul, li {
     &:not(:first-child) {
         margin-top: rythm(4);
     }
@@ -52,9 +53,21 @@ p, blockquote, pre, ol, ul, li, .row {
 
 a {
     color: colors.text;
-    text-decoration: underline;
-    text-decoration-color: colors.main;
-    transition: color td, text-decoration-color td;
+    transition: color td;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+
+    &:after {
+        transition: border-bottom-color td;
+        content: '';
+        display: block;
+        width: 100%;
+        border-bottom: 2px solid colors.main;
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+    }
 
     &:visited {
         color: initial;
@@ -66,7 +79,11 @@ a {
 
     &:focus {
         color: colors.main-dark;
-        text-decoration-color: colors.main-dark;
+
+        &:after {
+            border-bottom-color: colors.main-dark;
+        }
+
         outline: none;
     }
 }

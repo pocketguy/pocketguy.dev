@@ -1,9 +1,106 @@
 @require 'computed.styl';
+@require 'funcs.styl';
 
 with-vp(name) {
-    vp = viewports[name];
-
-    @media (min-width: vp.break-width) {
+    @media (min-width: viewports[name]) {
         {block};
     }
+}
+
+pl(v) {
+    padding-left: rythm(v);
+}
+
+pr(v) {
+    padding-right: rythm(v);
+}
+
+pt(v) {
+    padding-top: rythm(v);
+}
+
+pb(v) {
+    padding-bottom: rythm(v);
+}
+
+px(v) {
+    pl(v);
+    pr(v);
+}
+
+py(v) {
+    pt(v);
+    pb(v);
+}
+
+pa(v) {
+    px(v);
+    py(v);
+}
+
+ml(v) {
+    margin-left: rythm(v);
+}
+
+mr(v) {
+    margin-right: rythm(v);
+}
+
+mt(v) {
+    margin-top: rythm(v);
+}
+
+mb(v) {
+    margin-bottom: rythm(v);
+}
+
+mx(v) {
+    ml(v);
+    mr(v);
+}
+
+my(v) {
+    mt(v);
+    mb(v);
+}
+
+ma(v) {
+    mx(v);
+    my(v);
+}
+
+ac(v) {
+    align-content: v;
+}
+
+ai(v) {
+    align-items: v;
+}
+
+as(v) {
+    align-self: v;
+}
+
+jc(v) {
+    justify-content: v;
+}
+
+w(v) {
+    width: (v * 100 / 12) %;
+}
+
+o(v) {
+    order: v;
+}
+
+ta(v) {
+    text-align: v
+}
+
+d(v) {
+    display: v
+}
+
+fd(v) {
+    flex-direction: v
 }

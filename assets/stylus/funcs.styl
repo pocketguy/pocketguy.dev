@@ -1,5 +1,9 @@
 @require 'vars.styl';
 
 rythm(mult) {
-    vr * mult;
+    if typeof(mult) == 'unit' {
+        vr * mult
+    } else {
+        mult
+    }
 }
