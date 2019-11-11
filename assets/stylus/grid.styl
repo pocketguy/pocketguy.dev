@@ -19,6 +19,7 @@ shortcuts = {
     fs: flex-start,
     inh: inherit,
     ini: initial,
+    inl: inline,
     j: justify,
     jc: justify-content,
     l: left,
@@ -137,7 +138,7 @@ build_helpers(prefix) {
         }
     }
 
-    for i in b f none {
+    for i in b f none inl {
         .{prefix}d-{i} {
             d(shortcuts[i]);
         }

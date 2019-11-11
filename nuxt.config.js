@@ -27,7 +27,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['@/plugins/markdown.js'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -54,7 +54,8 @@ export default {
     ],
     'nuxt-webfontloader',
     '@nuxtjs/sitemap',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    '@nuxtjs/markdownit'
   ],
   styleResources: {
     stylus: ['@/assets/stylus/include.styl']

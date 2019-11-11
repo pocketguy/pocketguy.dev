@@ -25,6 +25,10 @@
     "@nuxtjs/sitemap": "^2.0.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "@nuxtjs/yandex-metrika": "^1.0.3",
+    "js-yaml": "^3.13.1",
+    "jsdom": "^15.2.1",
+    "markdown-it": "^10.0.0",
+    "markdown-it-meta": "0.0.1",
     "nuxt": "^2.0.0",
     "nuxt-webfontloader": "^1.1.0"
   },
@@ -41,5 +45,9 @@
     "prettier": "^1.16.4",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
   }
 }
