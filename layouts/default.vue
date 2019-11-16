@@ -8,24 +8,53 @@
       </p>
       <ul class="nav xs-d-f xs-fw-wrap">
         <li class="nav-item xs-w-6 md-w-2 xs-mt-0 md-ta-c md-ml-auto">
-          <nuxt-link class="nav-link" :to="{ name: 'projects' }">
+          <nuxt-link
+            v-if="shouldNotBeDisabled('projects')"
+            class="nav-link"
+            :to="{ name: 'category', params: { category: 'projects' } }"
+          >
             проекты
           </nuxt-link>
+          <mark v-else class="xs-pa-1">
+            проекты
+          </mark>
         </li>
         <li class="nav-item xs-w-6 md-w-2 xs-mt-0 xs-ta-r md-ta-c">
-          <nuxt-link class="nav-link" :to="{ name: 'blog' }">блог</nuxt-link>
+          <nuxt-link
+            v-if="shouldNotBeDisabled('blog')"
+            class="nav-link"
+            :to="{ name: 'category', params: { category: 'blog' } }"
+            >блог</nuxt-link
+          >
+          <mark v-else class="xs-pa-1">
+            блог
+          </mark>
         </li>
         <li class="nav-item xs-w-6 md-w-2 xs-mt-2 md-mt-0 md-ta-c">
-          <nuxt-link class="nav-link" :to="{ name: 'about' }">
+          <nuxt-link
+            v-if="shouldNotBeDisabled('about')"
+            class="nav-link"
+            :to="{ name: 'about' }"
+          >
             обо мне
           </nuxt-link>
+          <mark v-else class="xs-pa-1">
+            обо мне
+          </mark>
         </li>
         <li
           class="nav-item xs-w-6 md-w-2 xs-mt-2 md-mt-0 xs-ta-r md-ta-c md-mr-auto"
         >
-          <nuxt-link class="nav-link" :to="{ name: 'contacts' }">
+          <nuxt-link
+            v-if="shouldNotBeDisabled('contacts')"
+            class="nav-link"
+            :to="{ name: 'contacts' }"
+          >
             контакты
           </nuxt-link>
+          <mark v-else class="xs-pa-1">
+            контакты
+          </mark>
         </li>
       </ul>
     </nav>
@@ -48,6 +77,20 @@
     </footer>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    shouldNotBeDisabled(name) {
+      if (this.$route.params.category) {
+        return !this.$route.params.category.startsWith(name)
+      } else {
+        return !this.$route.name.startsWith(name)
+      }
+    }
+  }
+}
+</script>
 
 <style lang="stylus" scoped>
 .main {

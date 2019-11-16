@@ -7,12 +7,24 @@
         <ul class="list-style-none">
           <li>
             <h2>
-              <nuxt-link :to="{ name: 'projects' }">проекты</nuxt-link>
+              <nuxt-link
+                :to="{
+                  name: 'category',
+                  params: { category: 'projects' }
+                }"
+                >проекты</nuxt-link
+              >
             </h2>
           </li>
           <li>
             <h2>
-              <nuxt-link :to="{ name: 'blog' }">блог</nuxt-link>
+              <nuxt-link
+                :to="{
+                  name: 'category',
+                  params: { category: 'blog' }
+                }"
+                >блог</nuxt-link
+              >
             </h2>
           </li>
           <li>
