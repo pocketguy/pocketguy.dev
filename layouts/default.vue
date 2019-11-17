@@ -95,7 +95,7 @@ export default {
 <style lang="stylus" scoped>
 .main {
   min-height: 100vh;
-  py(4);
+  py(12);
 }
 
 .brand {
