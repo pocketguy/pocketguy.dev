@@ -1,4 +1,29 @@
 import path from 'path'
+import fs from 'fs'
+
+function walkSync(dir, filelist) {
+  const files = fs.readdirSync(dir)
+  filelist = filelist || []
+  files.forEach(function(file) {
+    if (fs.statSync(dir + file).isDirectory()) {
+      filelist = walkSync(dir + file + '/', filelist)
+    } else {
+      filelist.push(dir + file)
+    }
+  })
+  return filelist
+}
+
+function getRoutes() {
+  return walkSync('data/').map((e) =>
+    e
+      .replace('data/', '')
+      .replace('.md', '')
+      .replace(/^/, '/')
+      .replace(/$/, '/')
+      .replace(/^\/posts\//, '/blog/')
+  )
+}
 
 export default {
   mode: 'universal',
@@ -67,7 +92,8 @@ export default {
     }
   },
   sitemap: {
-    hostname: 'https://pocketguy.dev'
+    hostname: 'https://pocketguy.dev',
+    routes: getRoutes()
   },
   router: {
     trailingSlash: true
@@ -90,5 +116,8 @@ export default {
         ]
       })
     }
+  },
+  generate: {
+    routes: getRoutes()
   }
 }
