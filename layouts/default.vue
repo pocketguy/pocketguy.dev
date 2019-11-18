@@ -7,7 +7,9 @@
         </nuxt-link>
       </p>
       <ul class="nav xs-d-f xs-fw-wrap">
-        <li class="nav-item xs-w-6 md-w-2 xs-mt-0 md-ta-c md-ml-auto">
+        <li
+          class="nav-item xs-w-6 md-w-2 xs-mt-0 md-ta-c md-ml-auto xs-o-1 md-o-0"
+        >
           <nuxt-link
             v-if="shouldNotBeDisabled('projects')"
             class="nav-link"
@@ -19,7 +21,9 @@
             проекты
           </mark>
         </li>
-        <li class="nav-item xs-w-6 md-w-2 xs-mt-0 xs-ta-r md-ta-c">
+        <li
+          class="nav-item xs-w-6 md-w-2 xs-mt-2 md-mt-0 md-ta-c xs-o-3 md-o-0"
+        >
           <nuxt-link
             v-if="shouldNotBeDisabled('blog')"
             class="nav-link"
@@ -30,7 +34,9 @@
             блог
           </mark>
         </li>
-        <li class="nav-item xs-w-6 md-w-2 xs-mt-2 md-mt-0 md-ta-c">
+        <li
+          class="nav-item xs-w-6 md-w-2 xs-mt-0 xs-ta-r md-ta-c xs-o-2 md-o-0"
+        >
           <nuxt-link
             v-if="shouldNotBeDisabled('about')"
             class="nav-link"
@@ -43,7 +49,7 @@
           </mark>
         </li>
         <li
-          class="nav-item xs-w-6 md-w-2 xs-mt-2 md-mt-0 xs-ta-r md-ta-c md-mr-auto"
+          class="nav-item xs-w-6 md-w-2 xs-mt-2 md-mt-0 xs-ta-r md-ta-c md-mr-auto xs-o-4 md-o-0"
         >
           <nuxt-link
             v-if="shouldNotBeDisabled('contacts')"
