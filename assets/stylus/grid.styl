@@ -68,9 +68,10 @@ build_helpers(prefix) {
         }
     }
 
-    
+    iter = (0 .. 12)
+    push(iter, auto)
 
-    for i in (0 .. 12) auto {
+    for i in iter {
         .{prefix}ml-{i} {
             ml(i);
         }

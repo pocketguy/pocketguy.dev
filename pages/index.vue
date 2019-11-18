@@ -3,8 +3,8 @@
     <h1 class="xs-ta-c">pocketguy.dev</h1>
     <p class="xs-ta-c">сайт веб-разработчика</p>
     <div class="xs-d-f xs-fd-col md-fd-row md-ai-c">
-      <div class="md-w-2 md-ml-auto xs-mt-4">
-        <ul class="list-style-none">
+      <div class="md-w-2 md-ml-auto xs-mt-4 md-mt-0 xs-d-f xs-jc-c md-jc-fs">
+        <ul class="list-style-none xs-ta-c md-ta-l">
           <li>
             <h2>
               <nuxt-link
@@ -27,6 +27,15 @@
               >
             </h2>
           </li>
+        </ul>
+      </div>
+      <div class="md-w-3 xs-mt-4 xs-o--1 md-o-0">
+        <img class="pocketguy-img" src="/icon.png" alt="pocketguy.dev icon" />
+      </div>
+      <div
+        class="md-w-2 md-mr-auto xs-mt-4 xs-d-f md-jc-fe xs-jc-c xs-mt-4 md-mt-0"
+      >
+        <ul class="list-style-none xs-ta-c md-ta-r">
           <li>
             <h2>
               <nuxt-link :to="{ name: 'about' }">обо мне</nuxt-link>
@@ -39,31 +48,16 @@
           </li>
         </ul>
       </div>
-      <div class="md-w-3 xs-mt-4 xs-o--1 md-o-0">
-        <img class="pocketguy-img" src="/icon.png" alt="pocketguy.dev icon" />
-      </div>
-      <div class="md-w-2 md-mr-auto xs-mt-4 xs-d-f md-jc-fe">
-        <ul class="list-style-none xs-d-none">
-          <li>
-            <PSearch />
-          </li>
-          <li>
-            <h2>
-              <a href="#">in english</a>
-            </h2>
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
-import PSearch from '@/components/PSearch.vue'
+// import PSearch from '@/components/PSearch.vue'
 export default {
   layout: 'clean',
   components: {
-    PSearch
+    // PSearch
   },
   head() {
     return {
