@@ -1,7 +1,7 @@
 <template>
   <div class="container main md-jc-c xs-py-4">
     <h1 class="xs-ta-c">pocketguy.dev</h1>
-    <p class="xs-ta-c">сайт веб-разработчика</p>
+    <p class="xs-ta-c xs-mt-2">сайт веб-разработчика</p>
     <div class="xs-d-f xs-fd-col md-fd-row md-ai-c">
       <div class="md-w-2 md-ml-auto xs-mt-4 md-mt-0 xs-d-f xs-jc-c md-jc-fs">
         <ul class="list-style-none xs-ta-c md-ta-l">
@@ -84,6 +84,7 @@ export default {
 
 .main {
   min-height: 100vh;
+  py(12)
 }
 
 .container-fluid-screen {
