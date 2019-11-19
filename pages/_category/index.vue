@@ -26,7 +26,7 @@ export default {
   computed: {
     categoryT() {
       if (this.category === 'projects') return 'проекты'
-      if (this.category === 'blog') return 'блог'
+      if (this.category === 'posts') return 'блог'
       return this.category
     },
     categoryCapitalized() {
@@ -38,7 +38,7 @@ export default {
     let r = null
     if (category === 'projects') {
       r = require.context(`@/data/projects/?metaOnly`, true, /.*\.md$/)
-    } else if (category === 'blog') {
+    } else if (category === 'posts') {
       r = require.context(`@/data/posts/?metaOnly`, true, /.*\.md$/)
     }
     let data = {}

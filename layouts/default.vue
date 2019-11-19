@@ -25,9 +25,9 @@
           class="nav-item xs-w-6 md-w-2 xs-mt-2 md-mt-0 md-ta-c xs-o-3 md-o-0"
         >
           <nuxt-link
-            v-if="shouldNotBeDisabled('blog')"
+            v-if="shouldNotBeDisabled('posts')"
             class="nav-link"
-            :to="{ name: 'category', params: { category: 'blog' } }"
+            :to="{ name: 'category', params: { category: 'posts' } }"
             >блог</nuxt-link
           >
           <mark v-else class="xs-pa-1">

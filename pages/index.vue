@@ -21,7 +21,7 @@
               <nuxt-link
                 :to="{
                   name: 'category',
-                  params: { category: 'blog' }
+                  params: { category: 'posts' }
                 }"
                 >блог</nuxt-link
               >
