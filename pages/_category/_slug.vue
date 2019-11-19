@@ -18,7 +18,7 @@ export default {
   computed: {
     categoryT() {
       if (this.category === 'projects') return 'проекты'
-      if (this.category === 'blog') return 'блог'
+      if (this.category === 'posts') return 'блог'
       return this.category
     },
     categoryCapitalized() {
@@ -31,7 +31,7 @@ export default {
     let mdDocument = null
     if (category === 'projects') {
       mdDocument = require(`@/data/projects/${slug}.md`).default
-    } else if (category === 'blog') {
+    } else if (category === 'posts') {
       mdDocument = require(`@/data/posts/${slug}.md`).default
     }
     return {
