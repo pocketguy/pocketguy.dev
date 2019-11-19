@@ -21,7 +21,7 @@ function getRoutes() {
       .replace('.md', '')
       .replace(/^/, '/')
       .replace(/$/, '/')
-      .replace(/^\/posts\//, '/blog/')
+      .replace(/^\/posts\//, '/posts/')
   )
 }
 
