@@ -7,9 +7,8 @@ function walkSync(dir, filelist) {
   files.forEach(function(file) {
     if (fs.statSync(dir + file).isDirectory()) {
       filelist = walkSync(dir + file + '/', filelist)
-    } else {
-      filelist.push(dir + file)
     }
+    filelist.push(dir + file)
   })
   return filelist
 }
