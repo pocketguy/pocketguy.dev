@@ -1,5 +1,5 @@
 ```yml
-title: Контакты
+title: контакты
 description: >
   Связаться с создателем сайта Кулаковым Никитой pocketguy.dev через email, telegram, github. Контакты Кулакова Никиты.
 ```
