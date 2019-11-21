@@ -21,7 +21,8 @@ module.exports = function(source) {
   }
 
   const sourceWithoutMeta = source.replace(metaRegex, '').trim()
-  const html = md.render(sourceWithoutMeta)
+  let html = md.render(sourceWithoutMeta)
+  html = html.replace(/<a /g, '<a rel="noopener noreferrer nofollow" ')
   const ret = {
     meta,
     html

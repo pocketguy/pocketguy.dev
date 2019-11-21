@@ -41,7 +41,7 @@ blockquote {
     padding: rythm(4);
 }
 
-p, blockquote, pre, ol, ul {
+p, blockquote, pre, ol, ul, li {
     &:not(:first-child) {
         margin-top: rythm(4);
     }
@@ -114,13 +114,13 @@ ul {
     }
 }
 
-ul > li:not(:first-of-type), ol > li:not(:first-of-type) {
-    mt(1);
-}
-
 li > ul, li > ol {
     mt(1);
     pl(5);
+}
+
+ul li {
+    mt(1)
 }
 
 strong {
