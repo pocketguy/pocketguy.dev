@@ -64,7 +64,7 @@
         </li>
       </ul>
     </nav>
-    <nuxt class="xs-mt-4 xs-pt-4" />
+    <nuxt class="xs-mt-8" />
     <footer class="footer xs-pt-4 xs-mt-auto xs-ta-c">
       <p>
         <a
