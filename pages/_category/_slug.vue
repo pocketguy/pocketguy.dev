@@ -9,7 +9,7 @@
       {{ mdDocument.meta.title.toLowerCase() }}
     </p>
     <!-- eslint-disable-next-line -->
-    <div class="xs-pt-8" v-html="mdDocument.html"></div>
+    <div class="xs-mt-8" v-html="mdDocument.html"></div>
   </div>
 </template>
 
