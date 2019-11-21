@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import { headFromMdDocument } from '@/components/getHeadFromMdDocument'
+
 export default {
   computed: {
     categoryT() {
@@ -40,16 +42,7 @@ export default {
     }
   },
   head() {
-    return {
-      title: this.mdDocument.meta.title,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.mdDocument.meta.description
-        }
-      ]
-    }
+    return headFromMdDocument(this.mdDocument)
   }
 }
 </script>

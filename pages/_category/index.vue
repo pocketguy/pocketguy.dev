@@ -31,6 +31,14 @@ export default {
     },
     categoryCapitalized() {
       return this.categoryT.charAt(0).toUpperCase() + this.categoryT.slice(1)
+    },
+    description() {
+      if (this.category === 'projects')
+        return `Проекты pocketguy.dev. Запущенные и работающие сайты, веб-приложения, технологии, описание работы и архитектуры.`
+
+      if (this.category === 'blog')
+        return `Блог pocketguy.dev. Интересное из мира python, js, devops. Обучающие статьи.`
+      return null
     }
   },
   asyncData({ route }) {
@@ -53,6 +61,18 @@ export default {
     return {
       data,
       category
+    }
+  },
+  head() {
+    return {
+      title: this.categoryT,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description
+        }
+      ]
     }
   }
 }

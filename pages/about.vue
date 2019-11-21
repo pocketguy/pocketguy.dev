@@ -7,11 +7,15 @@
 </template>
 
 <script>
+import { headFromMdDocument } from '@/components/getHeadFromMdDocument'
 export default {
   asyncData() {
     return {
       mdDocument: require('@/data/about.md').default
     }
+  },
+  head() {
+    return headFromMdDocument(this.mdDocument)
   }
 }
 </script>

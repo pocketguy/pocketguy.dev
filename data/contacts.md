@@ -1,3 +1,9 @@
+```yml
+title: Контакты
+description: >
+  Связаться с создателем сайта Кулаковым Никитой pocketguy.dev через email, telegram, github. Контакты Кулакова Никиты.
+```
+
 # Контакты
 
 * **email**: [pocketguy@protonmail.com](mailto:pocketguy@protonmail.com)
